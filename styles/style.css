@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  font-size: 14px;
+}
+
+/* Базовые стили — мобильные */
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.appScreen {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 16px;
+}
+
+.dateText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#dayOfWeek {
+  font-size: 20px;
+  font-size: 500;
+}
+
+#date {
+  font-size: 15px;
+  font-size: 400;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(229, 226, 232);
+  border-radius: 28px;
+  padding: 12px 20px;
+}
+
+.searchContainer input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.filterData {
+  border-radius: 100px;
+  display: flex;
+  border: 1px solid #79747e;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filterData button:first-child,
+.filterData button:nth-child(2) {
+  border-right: 1px solid black;
+}
+
+.filterData button:first-child {
+  border-radius: 100px 0 0 100px;
+}
+
+.filterData button:last-child {
+  border-radius: 0 100px 100px 0;
+}
+
+.filterData button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  /* transform: ; */
+}
+
+.filterData i {
+  display: none;
+}
+
+.filterData button:focus {
+  background-color: #e8def8;
+}
+
+.filterData button:focus i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 12px;
+}
+
+.tasksList button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  background-color: #ebdef7;
+  border: none;
+  border-radius: 16px;
+  box-shadow: -4px 4px 8px #8f8d92;
+}
+
+.task {
+  display: flex;
+  gap: 16px;
+  background-color: rgb(246, 242, 249);
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
+.task div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalWindow {
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(246, 242, 249);
+  width: 100%;
+  border-radius: 28px 28px 0 0;
+}
+
+.modalWindow form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.dataInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.remindMeContainer,
+.dataInputs input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.dataInputs input {
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #79747e;
+  color: #49454f;
+  background-color: transparent;
+}
+
+.remindMeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.buttonContainer input {
+  text-align: center;
+  padding: 10px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.buttonContainer input:first-child {
+  background-color: #6750a4;
+  color: white;
+  border: none;
+}
+
+.buttonContainer input:last-child {
+  background-color: transparent;
+  color: #6750a4;
+  border: 1px solid #79747e;
+}
+
+#dragHandle {
+  width: 32px;
+  margin: 0 auto;
+}
