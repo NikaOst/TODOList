@@ -17,18 +17,28 @@
         <span id="date"></span>
       </div>
       <div class="searchContainer">
-        <input type="search" placeholder="Поиск..." />
+        <input id="searchInput" type="search" placeholder="Поиск..." />
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
-      <div class="filterData">
-        <button id="allTasks" name="all"><i class="fa-solid fa-check"></i><span> Все</span></button>
-        <button id="activTasks" name="activ">
-          <i class="fa-solid fa-check"></i><span> Активные</span>
-        </button>
-        <button id="compleatedTasks" name="compleated">
-          <i class="fa-solid fa-check"></i><span> Завершенные</span>
-        </button>
-      </div>
+      <form id="filterForm">
+        <div id="filterData">
+          <label>
+            <i class="fa-solid fa-check"></i>
+            <input type="radio" name="filter" value="all" />
+            <span>All tasks</span>
+          </label>
+          <label>
+            <i class="fa-solid fa-check"></i>
+            <input type="radio" name="filter" value="active" />
+            <span>Active</span>
+          </label>
+          <label>
+            <i class="fa-solid fa-check"></i>
+            <input type="radio" name="filter" value="completed" />
+            <span>Completed</span>
+          </label>
+        </div>
+      </form>
       <div class="tasksList">
         <!-- сюда кидаем таски из js -->
         <!-- <div class="task">
@@ -42,8 +52,8 @@
       <form id="addTaskForm">
         <img id="dragHandle" src="./assets/icons/Drag handle.svg" alt="Drag handle.svg" />
         <div class="dataInputs">
-          <input name="description" type="text" placeholder="Описание" />
-          <input name="date" type="text" placeholder="Дата" />
+          <input name="description" type="text" placeholder="Описание" required />
+          <input name="date" type="datetime-local" placeholder="Дата" required />
         </div>
         <div class="remindMeContainer">
           <span>Напомнить мне</span>
@@ -56,6 +66,7 @@
         </div>
       </form>
     </div>
+    <div class="blurbackground" hidden="true"></div>
   </body>
   <script src="/scripts/script.js"></script>
 </html>

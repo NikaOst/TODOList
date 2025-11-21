@@ -10,20 +10,6 @@ body {
   font-size: 14px;
 }
 
-/* Базовые стили — мобильные */
-
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    font-size: 18px;
-  }
-}
-
 .appScreen {
   display: flex;
   flex-direction: column;
@@ -66,47 +52,48 @@ body {
   font-weight: 400;
 }
 
-.filterData {
-  border-radius: 100px;
-  display: flex;
-  border: 1px solid #79747e;
-  font-size: 14px;
-  font-weight: 500;
+#filterData {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.filterData button:first-child,
-.filterData button:nth-child(2) {
-  border-right: 1px solid black;
-}
-
-.filterData button:first-child {
-  border-radius: 100px 0 0 100px;
-}
-
-.filterData button:last-child {
-  border-radius: 0 100px 100px 0;
-}
-
-.filterData button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  background-color: transparent;
-  border: none;
-  /* transform: ; */
-}
-
-.filterData i {
+#filterData input[type='radio'] {
   display: none;
 }
 
-.filterData button:focus {
+#filterData label {
+  width: 100%;
+  display: flex;
+  border: 1px solid #79747e;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#filterData > label:first-child {
+  border-radius: 100px 0 0 100px;
+}
+
+#filterData > label:last-child {
+  border-radius: 0 100px 100px 0;
+}
+
+#filterData span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 20px;
+}
+
+#filterData i {
+  display: none;
+}
+
+#filterData label:has(input[type='radio']:checked) {
   background-color: #e8def8;
 }
 
-.filterData button:focus i {
+#filterData label:has(input[type='radio']:checked) i {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -139,6 +126,19 @@ body {
   border-radius: 16px;
 }
 
+.task span:first-child,
+.task span:last-child {
+  font-weight: 400;
+}
+
+.task span:first-child {
+  font-size: 14px;
+}
+
+.task span:last-child {
+  font-size: 16px;
+}
+
 .task div {
   display: flex;
   flex-direction: column;
@@ -151,6 +151,7 @@ body {
   background-color: rgb(246, 242, 249);
   width: 100%;
   border-radius: 28px 28px 0 0;
+  z-index: 2;
 }
 
 .modalWindow form {
@@ -199,6 +200,10 @@ body {
   padding: 10px 24px;
   border-radius: 100px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 20px;
 }
 
 .buttonContainer input:first-child {
@@ -216,4 +221,20 @@ body {
 #dragHandle {
   width: 32px;
   margin: 0 auto;
+}
+
+.blurbackground {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.compleatedTask {
+  background: rgba(246, 242, 249, 0.5);
+  color: #00000091;
+}
+.compleatedTask span:last-child {
+  text-decoration: line-through;
 }
